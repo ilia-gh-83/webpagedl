@@ -1,0 +1,124 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6e5494, #0c0c0c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    position: relative; /* Added */
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Button styles */
+button {
+    background-color: #6e5494;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4d3968;
+}
+
+/* Input styles */
+input[type="file"],
+textarea {
+    width: calc(100% - 22px); /* Adjusted */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Step styles */
+.step {
+    display: none; /* Moved */
+}
+
+/* Show step */
+.step.show-step {
+    display: block; /* Moved and adjusted */
+}
+
+/* Loading overlay styles */
+#loadingOverlay {
+    position: absolute; /* Adjusted */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loading text */
+#loadingOverlay div {
+    font-size: 20px;
+    color: #333;
+}
+
+/* Animation for loading text */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Apply animation to loading text */
+#loadingOverlay div {
+    animation: pulse 1s infinite;
+}

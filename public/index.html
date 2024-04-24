@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Editing Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Step 1: Select upload or insert -->
+<div id="step1">
+    <h2>Step 1: Select upload or insert</h2>
+    <button onclick="showStep2('upload')">Upload HTML File</button>
+    <button onclick="showStep2('insert')">Insert HTML Code</button>
+</div>
+
+<!-- Step 2: Upload or insert input -->
+<div id="step2" style="display: none;">
+    <h2>Step 2: Upload or insert input</h2>
+    <div id="uploadInput" style="display: none;">
+        <input type="file" id="fileInput">
+    </div>
+    <div id="insertInput" style="display: none;">
+        <textarea id="codeInput" rows="10" cols="50"></textarea>
+    </div>
+    <button onclick="showStep3()">Next</button>
+    <button onclick="goBack()">Go Back</button>
+</div>
+
+<!-- Step 3: Select delivery method -->
+<div id="step3" style="display: none;">
+    <h2>Step 3: Select delivery method</h2>
+    <input type="checkbox" id="discordHook">Discord Hook<br>
+    <input type="checkbox" id="telegramBot">Telegram Bot<br>
+    <button onclick="editCode()">Next</button>
+    <button onclick="goBack()">Go Back</button>
+</div>
+
+<!-- Step 4: Receive edited code -->
+<div id="step4" style="display: none;">
+    <h2>Step 4: Receive edited code</h2>
+    <input type="radio" name="receiveMethod" value="download">Download HTML<br>
+    <input type="radio" name="receiveMethod" value="copy">Copy HTML Code<br>
+    <button onclick="receiveCode()">Submit</button>
+</div>
+
+<!-- Loading overlay -->
+<div id="loadingOverlay" style="display: none;">
+    <div>Loading...</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
